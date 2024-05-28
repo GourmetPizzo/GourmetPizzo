@@ -1,0 +1,292 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "AwardsMinted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "missionAddress",
+						"type": "address"
+					}
+				],
+				"name": "InviteChecked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"name": "PointQueried",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "missionAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "today",
+						"type": "uint256"
+					}
+				],
+				"name": "TodayChecked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "missionAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "today",
+						"type": "uint256"
+					}
+				],
+				"name": "TodayMissionChecked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "missionAddress",
+						"type": "address"
+					}
+				],
+				"name": "TwitterChecked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"name": "UserGameEnded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "awardsMint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "missionAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "missionType",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "today",
+						"type": "uint256"
+					}
+				],
+				"name": "checkMission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "userAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "points",
+						"type": "uint256"
+					}
+				],
+				"name": "userGameEnd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Total.sol": "Total"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"IUser.sol": {
+			"keccak256": "0x96b9c8cf145e51da9d1485421b37b9d08fee589fc7008c49db3119e695577950",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4ae080b41b86558b0d7a4962cc14f0a6291ebffed0b1efd600fa2aba56687db9",
+				"dweb:/ipfs/QmNUzPcTtYRwStR4aW2wiYrde9kMtLgECKAGdFtfubLUdC"
+			]
+		},
+		"Total.sol": {
+			"keccak256": "0xf2ae9ec50a68946935de70517c9a3d327447ad122a9368b8b40722b7d8073db7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d359b4140a64b0d2e6a984722701460352acd17f57eb2c3d79d2cc43bbdb6077",
+				"dweb:/ipfs/Qmcpr4K2FY1rvJRuPACamohdLySrqTa8quPEHyQP6SyS4b"
+			]
+		},
+		"iMission.sol": {
+			"keccak256": "0xe0436cef699cd81ce774243bc569d443929e267fcca6796889f42adc6feb0bd1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13f94764edb3566f06e2d8eca4836e2b97dd14af272b2df4a3474d712b2962ce",
+				"dweb:/ipfs/QmTqN7CMc8fhaXxZEcZNtVH2NGEC4uUCspKK7Tk25fEqmt"
+			]
+		},
+		"iToken.sol": {
+			"keccak256": "0xacc74b0a98b7f22c4b5f71554fbadb5dc2ff11e112dd28cbef08206a0175410b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://66fd01164173d7173df6bf7b6d0c40b5426906875ea9a2dd45b18cf08807905d",
+				"dweb:/ipfs/QmUM7k1ncQ6NCaWhXsXPCK4TRkUt9XbhgsJcafxhKzetKC"
+			]
+		}
+	},
+	"version": 1
+}

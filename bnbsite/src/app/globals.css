@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BMHANNA";
+  src: url("./font/BMHANNAPro.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./font/Pretendard-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes leftIntro {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  50% {
+    opacity: 50;
+  }
+  100% {
+    opacity: 100;
+    transform: translateX(0%);
+  }
+}
+@keyframes rightIntro {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  50% {
+    opacity: 50;
+  }
+  100% {
+    opacity: 100;
+    transform: translateX(0%);
+  }
+}
+@layer base {
+  .font-outline-3 {
+    text-shadow: -3px 0px white, 0px 3px white, 3px 0px white, 0px -3px white;
+  }
+  .font-outline-5 {
+    /* -webkit-text-stroke: 5px white; */
+    text-shadow: -5px 0px white, 0px 5px white, 5px 0px white, 0px -5px white;
+  }
+  .bg-gradient-mission {
+    background: linear-gradient(
+      238deg,
+      rgba(192, 192, 192, 0.6) 4%,
+      rgba(234, 184, 99, 0.6) 100%
+    );
+  }
+  .leftwithout-border1px {
+    border: 1px solid white 1px 1px 1px 0px;
+  }
+  .shadow-blur {
+    border-radius: 35px;
+    box-shadow: 0 0 8px rgba(76, 76, 76, 0.24);
+    mix-blend-mode: screen;
+    filter: blur(3px);
+    opacity: 0.24;
+  }
+  .scroll {
+    overflow-y: scroll;
+  }
+  .scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: rgb(51 51 51 / 0.7);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .scroll::-webkit-scrollbar-track {
+    background-color: none;
+  }
+  .animate-left {
+    animation: leftIntro 1s ease-in-out;
+  }
+  .animate-right {
+    animation: rightIntro 1s ease-in-out;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

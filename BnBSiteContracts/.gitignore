@@ -1,0 +1,8 @@
+.deps/
+./.deps/
+
+.states/
+./.states/
+
+node_modules/
+./node_modules/

@@ -1,0 +1,1086 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "initialOwner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "ECDSAInvalidSignature",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"name": "ECDSAInvalidSignatureLength",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "ECDSAInvalidSignatureS",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "allowance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "needed",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC20InsufficientAllowance",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "needed",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC20InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "approver",
+						"type": "address"
+					}
+				],
+				"name": "ERC20InvalidApprover",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "ERC20InvalidReceiver",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ERC20InvalidSender",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "ERC20InvalidSpender",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC2612ExpiredSignature",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "ERC2612InvalidSigner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentNonce",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidAccountNonce",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidShortString",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
+					}
+				],
+				"name": "StringTooLong",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "AwardsSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "EIP712DomainChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DOMAIN_SEPARATOR",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "awardsSend",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "decimal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "eip712Domain",
+				"outputs": [
+					{
+						"internalType": "bytes1",
+						"name": "fields",
+						"type": "bytes1"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "verifyingContract",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "salt",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "extensions",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "TokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "userTransfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"ECDSAInvalidSignature()": [
+					{
+						"details": "The signature derives the `address(0)`."
+					}
+				],
+				"ECDSAInvalidSignatureLength(uint256)": [
+					{
+						"details": "The signature has an invalid length."
+					}
+				],
+				"ECDSAInvalidSignatureS(bytes32)": [
+					{
+						"details": "The signature has an S value that is in the upper half order."
+					}
+				],
+				"ERC20InsufficientAllowance(address,uint256,uint256)": [
+					{
+						"details": "Indicates a failure with the `spender`’s `allowance`. Used in transfers.",
+						"params": {
+							"allowance": "Amount of tokens a `spender` is allowed to operate with.",
+							"needed": "Minimum amount required to perform a transfer.",
+							"spender": "Address that may be allowed to operate on tokens without being their owner."
+						}
+					}
+				],
+				"ERC20InsufficientBalance(address,uint256,uint256)": [
+					{
+						"details": "Indicates an error related to the current `balance` of a `sender`. Used in transfers.",
+						"params": {
+							"balance": "Current balance for the interacting account.",
+							"needed": "Minimum amount required to perform a transfer.",
+							"sender": "Address whose tokens are being transferred."
+						}
+					}
+				],
+				"ERC20InvalidApprover(address)": [
+					{
+						"details": "Indicates a failure with the `approver` of a token to be approved. Used in approvals.",
+						"params": {
+							"approver": "Address initiating an approval operation."
+						}
+					}
+				],
+				"ERC20InvalidReceiver(address)": [
+					{
+						"details": "Indicates a failure with the token `receiver`. Used in transfers.",
+						"params": {
+							"receiver": "Address to which tokens are being transferred."
+						}
+					}
+				],
+				"ERC20InvalidSender(address)": [
+					{
+						"details": "Indicates a failure with the token `sender`. Used in transfers.",
+						"params": {
+							"sender": "Address whose tokens are being transferred."
+						}
+					}
+				],
+				"ERC20InvalidSpender(address)": [
+					{
+						"details": "Indicates a failure with the `spender` to be approved. Used in approvals.",
+						"params": {
+							"spender": "Address that may be allowed to operate on tokens without being their owner."
+						}
+					}
+				],
+				"ERC2612ExpiredSignature(uint256)": [
+					{
+						"details": "Permit deadline has expired."
+					}
+				],
+				"ERC2612InvalidSigner(address,address)": [
+					{
+						"details": "Mismatched signature."
+					}
+				],
+				"InvalidAccountNonce(address,uint256)": [
+					{
+						"details": "The nonce used for an `account` is not the expected current nonce."
+					}
+				],
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
+				},
+				"EIP712DomainChanged()": {
+					"details": "MAY be emitted to signal that the domain could have changed."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"DOMAIN_SEPARATOR()": {
+					"details": "Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}."
+				},
+				"allowance(address,address)": {
+					"details": "See {IERC20-allowance}."
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC20-approve}. NOTE: If `value` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC20-balanceOf}."
+				},
+				"decimals()": {
+					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
+				},
+				"eip712Domain()": {
+					"details": "See {IERC-5267}."
+				},
+				"name()": {
+					"details": "Returns the name of the token."
+				},
+				"nonces(address)": {
+					"details": "Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section]. CAUTION: See Security Considerations above."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token, usually a shorter version of the name."
+				},
+				"totalSupply()": {
+					"details": "See {IERC20-totalSupply}."
+				},
+				"transfer(address,uint256)": {
+					"details": "See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `value`."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `value`. - the caller must have allowance for ``from``'s tokens of at least `value`."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Token.sol": "PizzoToken"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ERC20/access/Ownable.sol": {
+			"keccak256": "0xf38661f6150dc3cc2ace3e5be886fb5f5e00808b737829acef27871a33ec78a6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e8bd68a64ce8d3ad9659a523e77d343ac7df32def6622ae1247da4175d127a91",
+				"dweb:/ipfs/QmaShq8orJCEf7Bt31yAcBzzy2xr722Ufnm2NYGJZPaTxg"
+			]
+		},
+		"ERC20/interfaces/IERC5267.sol": {
+			"keccak256": "0x558a8c09c56a7f8350f6ef3dd4a068d83bf9593a315fbac4d3570e449f56ca49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://34fd8222bf4c1fd902e9de81e0b41e9c1e3f34e821f1eda245c20f32a7a9298c",
+				"dweb:/ipfs/QmdRgrU1uMay2XFC9X2u7Qmf7QEMGwrg3HW38Pp9otq4Js"
+			]
+		},
+		"ERC20/interfaces/draft-IERC6093.sol": {
+			"keccak256": "0x8825960b4a8526bb4cc80f01c08a6c23a7d77125a3ce074576e84ed6c6c1633b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c7a7c0f0e05e871f9b7337f8fc90ba69ff903261ff494492c3cc2a4ce5999c6c",
+				"dweb:/ipfs/Qmcd2jCiBJCDosNSkH4L5dUtoffWpQhdPRpxFqdNbm4APM"
+			]
+		},
+		"ERC20/token/ERC20/ERC20.sol": {
+			"keccak256": "0x07b3330652f02b221810a24e61a4169e32b333fa1c07e98efca094ff0b3532d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7d5b6f86838207d04dc27702f7b8ba641cac6762e5483d7b5a865d58493bb31a",
+				"dweb:/ipfs/QmSiAbwFNuYtdAcB9MXKJndvGai4A9fnRfxFN2HqBvu2t6"
+			]
+		},
+		"ERC20/token/ERC20/IERC20.sol": {
+			"keccak256": "0x8284cbb4dabed2e3e0e46d87076e06b1954f2a324408cccc5197f27caa53934a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e36c6763a4c6e4a05bb08a7da37f026a92e9c886fb9f9602f9662df6512e4fa",
+				"dweb:/ipfs/Qmcv9W4GyBJDKHHeb3z97GDuvqs5gd2qcRHiZE7T7pFHcg"
+			]
+		},
+		"ERC20/token/ERC20/extensions/ERC20Permit.sol": {
+			"keccak256": "0x8cc7381692e0a933adb92a532c75bb747ddd42e2e58077ea630145bcd2e0f7b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8799f301ca349e653067574585c27ac5b818e3c0558e23baa22c16b83eca38f0",
+				"dweb:/ipfs/QmQXwrhg84soJsrFSQpm7XTyt3sv8CPNuP8fewsJCjwNaZ"
+			]
+		},
+		"ERC20/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0xc22d9fcff3834f25a997c771a92a8ffc9c649654598c8639065d16f9055fd4e5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6e46741f51e25e508794d66cca3e52c15d7ea8bc7d243f1a757de3dc79b258c",
+				"dweb:/ipfs/QmTS34iXt3pV8ipSf2FdA6pJ7KMoDtvBAUwQ1ZoRMQj3Z1"
+			]
+		},
+		"ERC20/token/ERC20/extensions/IERC20Permit.sol": {
+			"keccak256": "0x16cb617cf89da347bdda681e3a6e27855b7ffab7e753e72c76dce8b14c18b230",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dde8458836256e46899e67128b61a288bf9d07fe2ed2e6721d4801db6416c244",
+				"dweb:/ipfs/QmacoV7nJu9xyA982hHLwmjmDs33p97qKf6R1w4DKnEBmv"
+			]
+		},
+		"ERC20/utils/Context.sol": {
+			"keccak256": "0xe9a944f3fa2f3ef7e8ca05db2bbd3733ec6a68605a25107a545fde30067a9ec2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://35866e252c95859b5d5dd7c5805305d8d3b3c1a0a1f0ff8e370946daf26dda04",
+				"dweb:/ipfs/QmZuJXN9JrJk3bw1e5iDqjKMoBw7Udh5iw9VN56YCN4B3W"
+			]
+		},
+		"ERC20/utils/Nonces.sol": {
+			"keccak256": "0x9ef8135cc1a0dcf854cf02d718ecb20890b1a311aabee5ac8cc53dcf1a6627d4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cd9a36d6e8b5bd61ccf59cfc0b2cf2dfeb99944c8e0dc21b35d141d07e00682",
+				"dweb:/ipfs/QmbLXXj28zZ4n76B2FMip3gsq2wwBickyjeRYkTfqUyu1G"
+			]
+		},
+		"ERC20/utils/ShortStrings.sol": {
+			"keccak256": "0xe85d53392abcfb872de903b90471e3e609fd3903c014f5b6bba744830acf9a2f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c08df3103eef349b40d90b8dc3150cb9126291271ad2484eef5b3787f45b2ab4",
+				"dweb:/ipfs/QmY9gLVgrhAAKps7XydHLxazX1r8EzKnS4W8j9Z6WCWry1"
+			]
+		},
+		"ERC20/utils/StorageSlot.sol": {
+			"keccak256": "0xa223891f28cb1a0d2337385fc4a024ad697606898c6bfba1d352ad98de77c542",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d34da57aaeb4fe9a9dc13b8afee0e4ce3770d0992c331c439d636c33bb577ad",
+				"dweb:/ipfs/QmPyT3Q3RzGzQNuhZbQHskfCTSGmubweSY2e94M8iQ4iJ8"
+			]
+		},
+		"ERC20/utils/Strings.sol": {
+			"keccak256": "0x7e8514e3807e47a99d6dc0260cf5548eb476b3b46d2aef92320c45755fc4bfb5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c3b9262b5eb9e465da793c9f0c3731d5406f9df0ef32a2c6c6dea678681bb886",
+				"dweb:/ipfs/QmTPVpWBFafGbUDNRmJXTsa8oipwU6kepwjv2mkiLa41S4"
+			]
+		},
+		"ERC20/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x8369c776d569f0b1ae066e42931f1641a7e65d824403bf059e9c41ba54579310",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e4bd2b2d2f0ba4267eb413347df92f00fb2f350b0538c6e513ec530396308d7",
+				"dweb:/ipfs/QmdBK8vmqR3WoaRMJZUjLr9hsXEZ4nTKf9tf1vD7FMjq7K"
+			]
+		},
+		"ERC20/utils/cryptography/EIP712.sol": {
+			"keccak256": "0xfe98921a27ef45c2d012230c55e54b67d3e46f33ba7127003a78ce3da16e6592",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8594de48ff66afa522fe78db7558cea0aae37c921ea2209e5bdc6b2b099b1fcf",
+				"dweb:/ipfs/QmV3uEpJhWAfwKgjp5rwWNfcSkZWctT8W9pMBPD9GudWED"
+			]
+		},
+		"ERC20/utils/cryptography/MessageHashUtils.sol": {
+			"keccak256": "0xc97c1f0f97398052b47eaaffa13c6e3f8548b3e80a7ef414b742bdff30c5715f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93c8f2e7b510469419d1cd6dd56287a63c5a875734590b6b1e3b0a4ecad957c0",
+				"dweb:/ipfs/QmTG2VLL5xZzEm6wpkkTyq971p6GCmiSHE48TteZsfLwat"
+			]
+		},
+		"ERC20/utils/math/Math.sol": {
+			"keccak256": "0x903ae9bc61e06d2a3106fb6e28633120279bb88941aeed3dbf57fa40b69c681d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11913aad9300d979cc137e65ab6a7baa68faacd5d75e5f8e83720915e00eea49",
+				"dweb:/ipfs/QmSg8Zgv1gNVRxmDfNRuafvC1d3jgo3ccAib72NAgJSsns"
+			]
+		},
+		"ERC20/utils/math/SignedMath.sol": {
+			"keccak256": "0x5b037831af28f0b70cc5709cf78bd58b78432ab54b3c6ddadbeeb0b29dc09586",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://928a63974495b4f26b9aad971df0031920e8d5a6afd77638ecf71688f369743f",
+				"dweb:/ipfs/QmUXCUpJkRHkBGZadP1bVd46SB24wBNovbNqj1kc7XG3gd"
+			]
+		},
+		"Token.sol": {
+			"keccak256": "0xee566f1d7c1343ba2be51c7c263464b7d06c8f23c985e6e7a24e9d15925479a4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6cbabca170909471040e4fa4694fc26f5435f2df95129b1485bbcce438163708",
+				"dweb:/ipfs/Qmc9JhpFJGVuNGSQVx9KDKVzTGYtNtCodsWARiSmvsdcV4"
+			]
+		}
+	},
+	"version": 1
+}

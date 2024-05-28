@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "GetUserPoint",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "point",
+						"type": "uint256"
+					}
+				],
+				"name": "UpdatePoint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"IUser.sol": "UserInterface"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"IUser.sol": {
+			"keccak256": "0xb432afe130706dd5a4c10aa60c1f6911a5c09d651308b927f353455e955db626",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01a5b5c34f18fdc10178411c74b7c7de60d55fd98572a642d3f0274592331d7a",
+				"dweb:/ipfs/QmW1BGZLjgLMbMJu1eNUbu9TNW6QRdLNctaHzYT6K52Fu2"
+			]
+		}
+	},
+	"version": 1
+}
